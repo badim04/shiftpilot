@@ -1,0 +1,99 @@
+export type ThemeKey = 'midnight' | 'daylight' | 'warmth';
+
+export interface Theme {
+  label: string;
+  dark: boolean;
+  vars: Record<string, string>;
+}
+
+export const THEMES: Record<ThemeKey, Theme> = {
+  midnight: {
+    label: 'Midnight',
+    dark: true,
+    vars: {
+      '--bg': '#0E1116',
+      '--bg-2': '#0A0C10',
+      '--surface': '#161B23',
+      '--surface-2': '#1E242E',
+      '--surface-3': '#262D39',
+      '--ink': '#F3F5F8',
+      '--ink-2': '#9DA7B4',
+      '--ink-3': '#646E7C',
+      '--line': 'rgba(255,255,255,0.08)',
+      '--line-2': 'rgba(255,255,255,0.14)',
+      '--accent': '#5B8DEF',
+      '--accent-2': '#7BA6F5',
+      '--accent-ink': '#0A0C10',
+      '--accent-soft': 'rgba(91,141,239,0.16)',
+      '--positive': '#34D399',
+      '--positive-soft': 'rgba(52,211,153,0.15)',
+      '--warning': '#FBBF52',
+      '--warning-soft': 'rgba(251,191,82,0.15)',
+      '--danger': '#F2766B',
+      '--danger-soft': 'rgba(242,118,107,0.15)',
+      '--shadow': '0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35)',
+      '--shadow-lg': '0 24px 60px rgba(0,0,0,0.55)',
+    },
+  },
+  daylight: {
+    label: 'Daylight',
+    dark: false,
+    vars: {
+      '--bg': '#EEF1F6',
+      '--bg-2': '#E4E8EF',
+      '--surface': '#FFFFFF',
+      '--surface-2': '#F4F6FA',
+      '--surface-3': '#EAEEF4',
+      '--ink': '#0F1B2D',
+      '--ink-2': '#5A6577',
+      '--ink-3': '#94A0B0',
+      '--line': '#E4E8EF',
+      '--line-2': '#D3DAE4',
+      '--accent': '#2563EB',
+      '--accent-2': '#1D4FD7',
+      '--accent-ink': '#FFFFFF',
+      '--accent-soft': 'rgba(37,99,235,0.10)',
+      '--positive': '#16A34A',
+      '--positive-soft': 'rgba(22,163,74,0.10)',
+      '--warning': '#D97706',
+      '--warning-soft': 'rgba(217,119,6,0.12)',
+      '--danger': '#DC2626',
+      '--danger-soft': 'rgba(220,38,38,0.09)',
+      '--shadow': '0 1px 2px rgba(16,27,45,0.06), 0 6px 20px rgba(16,27,45,0.07)',
+      '--shadow-lg': '0 24px 60px rgba(16,27,45,0.18)',
+    },
+  },
+  warmth: {
+    label: 'Warmth',
+    dark: false,
+    vars: {
+      '--bg': '#FAF4EC',
+      '--bg-2': '#F2E9DC',
+      '--surface': '#FFFFFF',
+      '--surface-2': '#FBF5ED',
+      '--surface-3': '#F4EADC',
+      '--ink': '#2C2620',
+      '--ink-2': '#897E70',
+      '--ink-3': '#B6A892',
+      '--line': '#ECE1D2',
+      '--line-2': '#DFD0BB',
+      '--accent': '#E0633A',
+      '--accent-2': '#C9512C',
+      '--accent-ink': '#FFFFFF',
+      '--accent-soft': 'rgba(224,99,58,0.12)',
+      '--positive': '#4F9D6A',
+      '--positive-soft': 'rgba(79,157,106,0.14)',
+      '--warning': '#C98A2B',
+      '--warning-soft': 'rgba(201,138,43,0.15)',
+      '--danger': '#D2553F',
+      '--danger-soft': 'rgba(210,85,63,0.12)',
+      '--shadow': '0 1px 2px rgba(60,42,24,0.06), 0 6px 20px rgba(60,42,24,0.08)',
+      '--shadow-lg': '0 24px 60px rgba(60,42,24,0.20)',
+    },
+  },
+};
+
+export const themeVars = (key: ThemeKey) => (THEMES[key] || THEMES.midnight).vars;
+export const isDark = (key: ThemeKey) => (THEMES[key] || THEMES.midnight).dark;
+
+export const ACCENTS = ['', '#2F6BF0', '#7A5AE0', '#0E9E8E', '#E0633A', '#E0A845'] as const;

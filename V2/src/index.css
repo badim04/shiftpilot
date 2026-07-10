@@ -1,0 +1,51 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  background: #0E1116;
+  font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+#root, .rota-root {
+  font-family: 'Plus Jakarta Sans', -apple-system, system-ui, sans-serif;
+}
+button { font-family: inherit; }
+h1 { font-family: inherit; }
+input, select, textarea { font-family: inherit; }
+
+@keyframes rotaPulse {
+  0%   { transform: scale(0.7); opacity: 0.5; }
+  70%  { transform: scale(1.7); opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@keyframes rotaSlideR {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+.rota-cell { transition: border-color .12s, background .12s; }
+.rota-cell:hover { border-color: var(--accent) !important; }
+.rota-cell:empty:hover { background: var(--accent-soft) !important; }
+.rota-cell:empty:hover::after {
+  content: '+';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--accent);
+  font-size: 22px;
+  font-weight: 700;
+}
+.shift-chip:hover .chip-x { display: flex !important; }
+
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.32);
+  border-radius: 9px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track { background: transparent; }
+
+select option { color: #111; }
