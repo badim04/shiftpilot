@@ -5,3 +5,16 @@ dist/
 *.log
 ios/
 android/
+
+# --- added by github_auto_sync ---
+.env.*
+config.txt
+*.pem
+*.key
+__pycache__/
+*.pyc
+.api_cache/
+.DS_Store
+*_profile/
+*.rar
+*.zip
