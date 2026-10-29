@@ -1,5 +1,7 @@
 # ShiftPilot
 
+> **Case study:** a plain-English walkthrough of how this works, step by step, with the key code: https://abdulakeem-adebayo.vercel.app/#shiftpilot
+
 Every shift. Every agency. On time.
 
 One Expo (React Native + TypeScript) codebase that ships to **iOS, Android, and the web**, backed by **Supabase**. This scaffold includes auth, the full data model, shift CRUD with conflict detection, shift templates, multi-location starting points, the AI email-parsing pipeline, and the live-traffic **leave-by alert engine**.
